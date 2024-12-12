@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 800">
+  <!-- Background -->
+  <rect width="900" height="800" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-size="24" font-weight="bold">Two-Phase Video Search Architecture</text>
+  
+  <!-- Phase Labels -->
+  <rect x="50" y="60" width="300" height="40" rx="8" fill="#ffe6cc" stroke="#ff9933" stroke-width="2"/>
+  <text x="200" y="85" text-anchor="middle" font-size="16" font-weight="bold">Offline Video Indexing</text>
+  
+  <rect x="550" y="60" width="300" height="40" rx="8" fill="#cce6ff" stroke="#3399ff" stroke-width="2"/>
+  <text x="700" y="85" text-anchor="middle" font-size="16" font-weight="bold">Online Query Processing</text>
+  
+  <!-- Offline Phase - Video Processing -->
+  <g transform="translate(0, 20)">
+    <!-- Input Video Section -->
+    <rect x="50" y="100" width="200" height="80" rx="8" fill="#ffebe6" stroke="#ff4d4d" stroke-width="2"/>
+    <text x="150" y="135" text-anchor="middle" font-size="16" font-weight="bold">Video Dataset</text>
+    <text x="150" y="155" text-anchor="middle" font-size="12" fill="#666">Multiple Videos</text>
+    
+    <!-- Frame Extraction -->
+    <rect x="50" y="220" width="200" height="80" rx="8" fill="#fff0e6" stroke="#ff8533" stroke-width="2"/>
+    <text x="150" y="255" text-anchor="middle" font-size="16" font-weight="bold">Frame Extraction</text>
+    <text x="150" y="275" text-anchor="middle" font-size="12" fill="#666">8 frames per video</text>
+    
+    <!-- Vision Encoder -->
+    <rect x="50" y="340" width="200" height="80" rx="8" fill="#e6f3ff" stroke="#1a8cff" stroke-width="2"/>
+    <text x="150" y="375" text-anchor="middle" font-size="16" font-weight="bold">Vision Encoder</text>
+    <text x="150" y="395" text-anchor="middle" font-size="12" fill="#666">CLIP ViT-B/32</text>
+    
+    <!-- Frame Embeddings -->
+    <rect x="50" y="460" width="200" height="80" rx="8" fill="#e6ffe6" stroke="#00cc00" stroke-width="2"/>
+    <text x="150" y="495" text-anchor="middle" font-size="16" font-weight="bold">Frame Embeddings</text>
+    <text x="150" y="515" text-anchor="middle" font-size="12" fill="#666">8 × 512 dimensions</text>
+    
+    <!-- Mean Pooling -->
+    <rect x="50" y="580" width="200" height="80" rx="8" fill="#e6e6ff" stroke="#4d4dff" stroke-width="2"/>
+    <text x="150" y="615" text-anchor="middle" font-size="16" font-weight="bold">Mean Pooling</text>
+    <text x="150" y="635" text-anchor="middle" font-size="12" fill="#666">1 × 512 dimensions</text>
+    
+    <!-- Video Index -->
+    <rect x="50" y="700" width="200" height="80" rx="8" fill="#f0f0f5" stroke="#666699" stroke-width="2"/>
+    <text x="150" y="735" text-anchor="middle" font-size="16" font-weight="bold">Video Index</text>
+    <text x="150" y="755" text-anchor="middle" font-size="12" fill="#666">Stored Embeddings</text>
+  </g>
+  
+  <!-- Online Phase - Query Processing -->
+  <g transform="translate(0, 20)">
+    <!-- Query Input -->
+    <rect x="550" y="100" width="200" height="80" rx="8" fill="#ffebe6" stroke="#ff4d4d" stroke-width="2"/>
+    <text x="650" y="135" text-anchor="middle" font-size="16" font-weight="bold">Search Query</text>
+    <text x="650" y="155" text-anchor="middle" font-size="12" fill="#666">"cooking pasta"</text>
+    
+    <!-- Text Encoder -->
+    <rect x="550" y="220" width="200" height="80" rx="8" fill="#e6f3ff" stroke="#1a8cff" stroke-width="2"/>
+    <text x="650" y="255" text-anchor="middle" font-size="16" font-weight="bold">Text Encoder</text>
+    <text x="650" y="275" text-anchor="middle" font-size="12" fill="#666">CLIP Text Model</text>
+    
+    <!-- Query Embedding -->
+    <rect x="550" y="340" width="200" height="80" rx="8" fill="#e6ffe6" stroke="#00cc00" stroke-width="2"/>
+    <text x="650" y="375" text-anchor="middle" font-size="16" font-weight="bold">Query Embedding</text>
+    <text x="650" y="395" text-anchor="middle" font-size="12" fill="#666">512 dimensions</text>
+    
+    <!-- Similarity Search -->
+    <rect x="550" y="460" width="200" height="80" rx="8" fill="#f0f0f5" stroke="#666699" stroke-width="2"/>
+    <text x="650" y="485" text-anchor="middle" font-size="16" font-weight="bold">Similarity Search</text>
+    <text x="650" y="505" text-anchor="middle" font-size="14">sim(v,t) = v·t / (||v|| ||t||)</text>
+    <text x="650" y="525" text-anchor="middle" font-size="12" fill="#666">Cosine Similarity</text>
+    
+    <!-- Results -->
+    <rect x="550" y="580" width="200" height="80" rx="8" fill="#e6e6ff" stroke="#4d4dff" stroke-width="2"/>
+    <text x="650" y="615" text-anchor="middle" font-size="16" font-weight="bold">Top-k Results</text>
+    <text x="650" y="635" text-anchor="middle" font-size="12" fill="#666">Ranked by Similarity</text>
+  </g>
+  
+  <!-- Simple connection lines -->
+  <g stroke="#333" stroke-width="3">
+    <!-- Offline phase lines -->
+    <line x1="150" y1="200" x2="150" y2="220"/>
+    <line x1="150" y1="300" x2="150" y2="340"/>
+    <line x1="150" y1="420" x2="150" y2="460"/>
+    <line x1="150" y1="540" x2="150" y2="580"/>
+    <line x1="150" y1="660" x2="150" y2="700"/>
+    
+    <!-- Online phase lines -->
+    <line x1="650" y1="180" x2="650" y2="220"/>
+    <line x1="650" y1="300" x2="650" y2="340"/>
+    <line x1="650" y1="420" x2="650" y2="460"/>
+    <line x1="650" y1="540" x2="650" y2="580"/>
+    
+    <!-- Connection between phases -->
+    <line x1="150" y1="740" x2="550" y2="500" stroke-dasharray="10,5"/>
+  </g>
+</svg>
