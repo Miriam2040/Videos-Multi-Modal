@@ -15,7 +15,7 @@ A comprehensive system for video search and question answering using state-of-th
 ### 1. Video Search ([Videos_Search.ipynb](Videos_Search.ipynb)) 🔍
 
 #### CLIP Architecture
-![CLIP Base Architecture](clip.PNG)
+![CLIP Base Architecture](src/clip.PNG)
 
 CLIP (Contrastive Language-Image Pre-training) is trained on millions of (image, text) pairs from the internet. During training, it learns to:
 * Encode images and text into the same embedding space
@@ -24,7 +24,7 @@ CLIP (Contrastive Language-Image Pre-training) is trained on millions of (image,
 * Create robust and generalizable visual-textual representations
 
 #### System Architecture
-![CLIP Video Search Architecture](diagram.svg)
+![CLIP Video Search Architecture](arc/diagram.svg)
 
 **System Components** 🛠️
 
