@@ -24,7 +24,7 @@ CLIP (Contrastive Language-Image Pre-training) is trained on millions of (image,
 * Create robust and generalizable visual-textual representations
 
 #### System Architecture
-![CLIP Video Search Architecture](arc/diagram.svg)
+![CLIP Video Search Architecture](src/diagram.svg)
 
 **System Components** 🛠️
 
